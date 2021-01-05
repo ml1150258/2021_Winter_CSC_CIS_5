@@ -21,14 +21,16 @@ int main(int argc, char** argv) {
     //Initialize the Random Number Seed
     
     //Declare Variables
-    short a,b,c;
+    short op1,       //Operand 1 -> units, range, etc...
+          op2,       //Operand 2
+          sumRslt;   //Sum of Operand 1 and 2
     
     //Initialize Variables
-    a=30000;
-    b=4000;
+    op1=30000;
+    op2=4000;
     
     //Map Inputs to Outputs -> Process
-    c=a+b;
+    sumRslt=op1+op2;
     
     //Display Inputs/Outputs
     cout<<c<<" = "<<a<<" + "<<b<<endl;
