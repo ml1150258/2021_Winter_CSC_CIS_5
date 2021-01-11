@@ -1,8 +1,9 @@
 /* 
- * File:   main.cpp 
+ * File:   main.cpp
  * Author: Dr. Mark E. Lehr
  * Created on January 4, 2021, 10:50 AM
- * Purpose:  To show computers can't add/subtract
+ * Purpose:  CPP Template 
+ *           To be copied for each Assignment Problem
  */
 
 //System Libraries
@@ -19,22 +20,26 @@ using namespace std;
 //Execution Begins Here
 int main(int argc, char** argv) {
     //Initialize the Random Number Seed
-
+    
     //Declare Variables
-    short op1,       //Operand 1 -> units, range, etc...
-          op2,       //Operand 2
-          sumRslt;   //Sum of Operand 1 and 2
-
+    int decimal=1*2*2+1*2+1;
+    int octal=0353;
+    int hex=0x353;
+    char binary=0b01000001;
+    string str="Hello World";
+    
     //Initialize Variables
-    op1=30000;
-    op2=4000;
-
+    
     //Map Inputs to Outputs -> Process
-    sumRslt=op1+op2;
-
+    
     //Display Inputs/Outputs
-    cout<<sumRslt<<" = "<<op1<<" + "<<op2<<endl;
-
+    cout<<"Decimal = "<<decimal<<endl;
+    cout<<"Octal   = "<<octal<<endl;
+    cout<<"hex     = "<<hex<<endl;
+    cout<<"binary     = "<<binary<<endl;
+     cout<<"binary     = "<<static_cast<int>(binary)<<endl;
+     cout<<str<<endl;
+    
     //Exit the Program - Cleanup
     return 0;
 }
