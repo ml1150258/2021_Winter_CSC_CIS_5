@@ -46,8 +46,10 @@ int main(int argc, char** argv) {
     if(score>=90&&score<=100){
         grade='A';
     }
+    if(score<0||score>100){
+        cout<<"Not Possible"<<endl;
+    }
         
-    
     //Display Outputs
     cout<<"A score of "<<static_cast<int>(score)
             <<" is a "<<grade<<" grade!"<<endl;

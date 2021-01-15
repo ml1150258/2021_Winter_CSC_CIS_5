@@ -41,6 +41,8 @@ int main(int argc, char** argv) {
         grade='B';
     }else if(score<=100){
         grade='A';
+    }else{
+        cout<<"Not Possible"<<endl;
     }
         
     //Display Outputs
