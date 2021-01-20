@@ -1,0 +1,11 @@
+The Present Value = $100.00
+The Interest Rate = 12.00%
+Number of years = 6
+Count  Year  Savings  Interest
+  0    2021   100.00    12.00
+  1    2022   112.00    13.44
+  2    2023   125.44    15.05
+  3    2024   140.49    16.86
+  4    2025   157.35    18.88
+  5    2026   176.23    21.15
+  6    2027   197.38    23.69

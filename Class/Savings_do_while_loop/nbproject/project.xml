@@ -3,7 +3,7 @@
     <type>org.netbeans.modules.cnd.makeproject</type>
     <configuration>
         <data xmlns="http://www.netbeans.org/ns/make-project/1">
-            <name>SavingsFunction_AllWaysToImplementFromGaddisChap6</name>
+            <name>Savings_do_while_loop</name>
             <c-extensions>cpp</c-extensions>
             <cpp-extensions/>
             <header-extensions/>
