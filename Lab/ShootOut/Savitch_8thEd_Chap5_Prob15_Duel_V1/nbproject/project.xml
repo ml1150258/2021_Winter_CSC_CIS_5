@@ -3,9 +3,9 @@
     <type>org.netbeans.modules.cnd.makeproject</type>
     <configuration>
         <data xmlns="http://www.netbeans.org/ns/make-project/1">
-            <name>Constructs_To_Flowchart</name>
-            <c-extensions>cpp</c-extensions>
-            <cpp-extensions/>
+            <name>Savitch_8thEd_Chap5_Prob15_Duel_V1</name>
+            <c-extensions/>
+            <cpp-extensions>cpp</cpp-extensions>
             <header-extensions/>
             <sourceEncoding>UTF-8</sourceEncoding>
             <make-dep-projects/>
