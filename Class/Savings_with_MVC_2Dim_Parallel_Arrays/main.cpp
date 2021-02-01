@@ -15,10 +15,11 @@ using namespace std;
 //Global Constants
 //Math, Science, Universal, Conversions, High Dimensioned Arrays
 const int CNVPRCT=100;//Percent Conversion
+const int COLS=2;     //Number of Columns in the 2D Arrays
 
 //Function Prototypes
-void model(float,float,int,int,float[],float[],int[],int[]);//Model/Business Logic
-void display(float,int,float[],float[],int[],int[]);  //Display/Tables
+void model(float,float,int,int,float[][COLS],int[][COLS]);//Model/Business Logic
+void display(float,int,float[][COLS],int[][COLS]);  //Display/Tables
 
 //Execution Begins Here
 int main(int argc, char** argv) {
@@ -28,52 +29,54 @@ int main(int argc, char** argv) {
     float   pv=100.0f,      //Present Value in $'s
             intRate=0.06f;  //Interest Rate in Decimal
     int     numCmpd;        //Number of compounding periods in Years
-    const int ARYSIZE=100;  //Largest Array Size more than numCmpd     
-    int     index[ARYSIZE], //Indexed Array
-            yrs[ARYSIZE];   //Years Array
-    float   futVal[ARYSIZE],//Future Value in $'s
-            intrst[ARYSIZE];//Interest Rate
+    const int ARYSIZE=100;  //Largest Array Size more than numCmpd    
+    //idxYrs[ARYSIZE][0] -> Count or Index Column
+    //idxYrs[ARYSIZE][1] -> Actual Year
+    int     idxYrs[ARYSIZE][COLS]; //Indexed Array and Years
+    //fValInt[ARYSIZE][0] -> Future Value in $'S
+    //fValInt[ARYSIZE][1] -> Interest in $'S
+    float   fValInt[ARYSIZE][COLS];//Future Value in $'s with Interest
     
     //Initialize Variables
     numCmpd=72/(intRate*CNVPRCT);//By the Rule of 72
     
     //Calculate and Display the Table as you go
-    model(pv,intRate,numCmpd,2021,futVal,intrst,index,yrs);
+    model(pv,intRate,numCmpd,2021,fValInt,idxYrs);
     
     //Display the headings
-    display(intRate,numCmpd,futVal,intrst,index,yrs);
+    display(intRate,numCmpd,fValInt,idxYrs);
   
     //Exit the Program - Cleanup
     return 0;
 }
 
 void display(float intRate,int numCmpd,
-        float futVal[],float intrst[],int index[],int yrs[]){
+        float fValInt[][COLS],int idxYrs[][COLS]){
     
     //Display the headings
     cout<<fixed<<setprecision(2)<<showpoint;
-    cout<<"The Present Value = $"<<futVal[0]<<endl;
+    cout<<"The Present Value = $"<<fValInt[0][0]<<endl;
     cout<<"The Interest Rate = "<<intRate*CNVPRCT<<"%"<<endl;
     cout<<"Number of years = "<<numCmpd<<endl;
     cout<<"Count  Year  Savings  Interest"<<endl;
     
     //Display of the Information Table
-    for(int count=0,years=yrs[0];count<=numCmpd;count++,years++){
-        cout<<setw(3)<<index[count]<<setw(8)<<yrs[0]
-                <<setw(9)<<futVal[count]<<setw(9)<<intrst[count]<<endl;
+    for(int count=0,years=idxYrs[0][1];count<=numCmpd;count++,years++){
+        cout<<setw(3)<<idxYrs[count][0]<<setw(8)<<idxYrs[count][1]
+                <<setw(9)<<fValInt[count][0]<<setw(9)<<fValInt[count][1]<<endl;
     }
 }
 
 void model(float pv,float intRate,int numCmpd,int begYear,
-        float futVal[],float intrst[],int index[],int yrs[]){
+        float fValInt[][COLS],int idxYrs[][COLS]){
     
     //Calculate and Display the Table as you go
-    yrs[0]=begYear;
-    futVal[0]=pv;
-    for(int count=0,years=yrs[0];count<=numCmpd;count++,years++){
-        yrs[count]=years;
-        index[count]=count;
-        intrst[count]=(futVal[count]*intRate);
-        futVal[count+1]=futVal[count]*(1+intRate);
+    idxYrs[0][1]=begYear;
+    fValInt[0][0]=pv;
+    for(int count=0,years=idxYrs[0][1];count<=numCmpd;count++,years++){
+        idxYrs[count][1]=years;
+        idxYrs[count][0]=count;
+        fValInt[count][1]=(fValInt[count][0]*intRate);
+        fValInt[count+1][0]=fValInt[count][0]*(1+intRate);
     }
 }

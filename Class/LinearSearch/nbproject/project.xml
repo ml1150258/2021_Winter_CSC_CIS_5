@@ -3,7 +3,7 @@
     <type>org.netbeans.modules.cnd.makeproject</type>
     <configuration>
         <data xmlns="http://www.netbeans.org/ns/make-project/1">
-            <name>Savitch_8thEd_Chap5_Prob15_Duel_V1</name>
+            <name>LinearSearch</name>
             <c-extensions>cpp</c-extensions>
             <cpp-extensions/>
             <header-extensions/>
