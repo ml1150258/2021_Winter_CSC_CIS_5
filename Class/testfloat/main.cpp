@@ -19,8 +19,8 @@ using namespace std;
  * 
  */
 int main(int argc, char** argv) {
-    float x;
-    x=123456788.0f;
+    double x;
+    x=123456781.112231321312131231;
     cout<<fixed;
     cout<<x<<endl;
     return 0;
