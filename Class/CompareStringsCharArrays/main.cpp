@@ -11,7 +11,7 @@
 #include <string.h>    //String Library
 using namespace std;
 
-int main(int argc, char** argv) {
+int main(int argc, char argv[][10]) {
     string s1,s2,s3;
     
     s1="Jim";
